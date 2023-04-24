@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 
 
@@ -19,14 +21,9 @@ Route::prefix('/aluno')->group(function() {
         );
 
 
-        $alunos = "<ul>";
-        foreach ($dados as $nome) {
-            $alunos .= "<li>$nome</li>";
-        }
+       
 
-        $alunos .= "</ul>";
-
-        return $alunos;
+        return view('aluno')->with('alunos', $dados);
 
     })->name('aluno');
 
@@ -129,11 +126,11 @@ Route::prefix('/nota')->group(function() {
 
 
         $dados = array(
-            array("matricula" => 1, "nome" => "Jordana", "nota" => 10),
+            array("matricula" => 1, "nome" => "Jordana", "nota" => 9),
             array("matricula" => 2, "nome" => "Marcos", "nota" => 3),
             array("matricula" => 3, "nome" => "Caio Pedro", "nota" => 6),
             array("matricula" => 4, "nome" => "Juliano", "nota" => 7),
-            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 0.3)
+            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 1)
         );
 
         $tabela = '<table>';
@@ -158,11 +155,11 @@ Route::prefix('/nota')->group(function() {
     Route::get('/limite/{valor}', function($valor) {
 
         $dados = array(
-            array("matricula" => 1, "nome" => "Jordana", "nota" => 10),
+            array("matricula" => 1, "nome" => "Jordana", "nota" => 9),
             array("matricula" => 2, "nome" => "Marcos", "nota" => 3),
             array("matricula" => 3, "nome" => "Caio Pedro", "nota" => 6),
             array("matricula" => 4, "nome" => "Juliano", "nota" => 7),
-            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 0.3)
+            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 1)
         );
 
 
@@ -196,11 +193,11 @@ Route::prefix('/nota')->group(function() {
     Route::get('/lancar/{nota}/{matricula}/{nome?}', function($nota, $matricula, $nome = null) {
 
         $dados = array(
-            array("matricula" => 1, "nome" => "Jordana", "nota" => 10),
+            array("matricula" => 1, "nome" => "Jordana", "nota" => 9),
             array("matricula" => 2, "nome" => "Marcos", "nota" => 3),
             array("matricula" => 3, "nome" => "Caio Pedro", "nota" => 6),
             array("matricula" => 4, "nome" => "Juliano", "nota" => 7),
-            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 0.3)
+            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 1)
         );
 
 
@@ -256,11 +253,11 @@ Route::prefix('/nota')->group(function() {
     Route::get('/conceito/{valorA}/{valorB}/{valorC}', function($valorA, $valorB, $valorC) {
 
         $dados = array(
-            array("matricula" => 1, "nome" => "Jordana", "nota" => 10),
+            array("matricula" => 1, "nome" => "Jordana", "nota" => 9),
             array("matricula" => 2, "nome" => "Marcos", "nota" => 3),
             array("matricula" => 3, "nome" => "Caio Pedro", "nota" => 6),
             array("matricula" => 4, "nome" => "Juliano", "nota" => 7),
-            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 0.3)
+            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 1)
         );
 
         foreach ($dados as $chave => $valor) {
@@ -301,15 +298,15 @@ Route::prefix('/nota')->group(function() {
     Route::post('/conceito', function(Request $request) {
 
         $dados = array(
-            array("matricula" => 1, "nome" => "Jordana", "nota" => 10),
-            array("matricula" => 2, "nome" => "Marcos", "nota" => 3),
-            array("matricula" => 3, "nome" => "Caio Pedro", "nota" => 6),
-            array("matricula" => 4, "nome" => "Juliano", "nota" => 7),
-            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 0.3)
+            array("matricula" => 1, "nome" => "Jordana", "nota" => 9),
+            array("matricula" => 2, "nome" => "Marcos", "nota" => 2),
+            array("matricula" => 3, "nome" => "Caio Pedro", "nota" => 8),
+            array("matricula" => 4, "nome" => "Juliano", "nota" => 6),
+            array("matricula" => 5, "nome" => "Tim Maia", "nota" => 4)
         );
 
         foreach ($dados as $chave => $valor) {
-            if ($valor['nota'] > $request->input('A')) {
+            if ($valor['nota'] >= $request->input('A')) {
                 $dados[$chave]['nota'] = "A";
             } 
             else if ($valor['nota'] > $request->input('B')) {
