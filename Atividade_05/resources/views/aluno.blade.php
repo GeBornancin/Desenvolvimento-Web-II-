@@ -7,4 +7,7 @@
         <li>{{ $aluno }}</li>
     @endforeach
     </ul>
+
+
+    
 </div>
