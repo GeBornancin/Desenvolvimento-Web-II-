@@ -82,5 +82,6 @@ class EixoController extends Controller
         DB::table('eixos')->where('id', $id)->delete();
 
         return redirect()->route('eixos.index');
+        
     }
 }

@@ -17,4 +17,5 @@ Route::get('/', function () {
     return view('templates.main')->with('titulo', "");
 })->name('index');
 
+
 Route::resource('eixos', 'EixoController');

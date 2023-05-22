@@ -17,6 +17,7 @@ class datatableEixo extends Component
         $this->data = $data;    
         $this->hide = $hide;   
     }
+    
     public function render()
     {
         return view('components.datatable_eixo');

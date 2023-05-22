@@ -69,6 +69,7 @@
             </div>
         </nav>
     </body>
+    
 
     <div class="modal fade" tabindex="-1" id="infoModal">
         <div class="modal-dialog">

@@ -14,4 +14,5 @@
     <label>Nome: </label>{{$dados['nome']}}
     <br>
 </body>
+
 </html>

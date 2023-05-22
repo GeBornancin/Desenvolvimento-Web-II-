@@ -7,7 +7,6 @@
             <x-datatableEixo crud="eixos" :header="['Nome', 'Ações']" :data="$data" :hide="[true, false]" />
         </div>
 
-
     </div>
     
     @endsection

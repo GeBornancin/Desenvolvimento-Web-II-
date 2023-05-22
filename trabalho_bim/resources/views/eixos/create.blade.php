@@ -22,7 +22,6 @@
                 </div>
             </div>
         </div>
-    
         <div class="row">
             <div class="col">
                 <a href="{{ route('eixos.index') }}"  class="btn btn-secondary btn-block align-content-center">
