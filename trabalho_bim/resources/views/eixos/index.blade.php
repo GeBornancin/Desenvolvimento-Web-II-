@@ -1,10 +1,15 @@
 @extends('templates.main')
-@section('titulo') Eixos @endsection
+@section('titulo') Eixos / Áreas @endsection
 @section('conteudo')
 
     <div class="row">
         <div class="col">
-            <x-datatableEixo crud="eixos" :header="['Nome', 'Ações']" :data="$data" :hide="[true, false]" />
+            <x-datalistEixo 
+            crud="eixos" 
+            :header="['Nome', 'Ações']" 
+            :data="$dados" 
+            :hide="[true, false]" 
+            />
         </div>
 
     </div>

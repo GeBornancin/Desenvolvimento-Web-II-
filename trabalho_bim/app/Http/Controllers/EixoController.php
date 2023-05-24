@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Eixo;
 
 
 class EixoController extends Controller
@@ -12,9 +12,9 @@ class EixoController extends Controller
     
     public function index()
     {
-        $data = DB::select('select * from eixos');
-        
-        return view('eixos.index', ['data' => $data]);
+         $dados = Eixo::all();
+
+       return view('eixos.index', compact('dados'));
     }
 
     /**
@@ -30,9 +30,9 @@ class EixoController extends Controller
      */
     public function store(Request $request)
     {
-        $nome = $request->input('nome');
-
-        DB::insert('insert into eixos (nome) values (?)', [$nome]);
+       Eixo::create([
+            'nome' => $request->nome
+        ]);
 
         return redirect()->route('eixos.index');
     }
@@ -41,20 +41,19 @@ class EixoController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-{
-    $data = DB::table('eixos')->find($id);
-
-    return view('eixos.show', compact('data'));
-}
+    {
+        
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        $data = DB::table('eixos')->find($id);
+        $dados = Eixo::find($id);
 
-        return view('eixos.edit', compact('data'));
+       
+        return view('eixos.edit', compact('dados'));
     }
 
     /**
@@ -62,24 +61,24 @@ class EixoController extends Controller
      */
    public function update(Request $request, string $id)
     {
-        $nome = $request->input('nome');
+       $obj = Eixo::find($id);
 
-        DB::table('eixos')
-            ->where('id', $id)
-            ->update(['nome' => $nome]);
+        $obj->fill([
+            'nome' => $request->nome
+        ]);
 
-        $data = DB::table('eixos')
-            ->where('id', $id)
-            ->first();
+        $obj->save();
 
-        return redirect()->route('eixos.index', ['data' => $data]);
+        return redirect()->route('eixos.index');
     }
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        DB::table('eixos')->where('id', $id)->delete();
+       $obj = Eixo::find($id);
+
+        $obj->destroy($id);
 
         return redirect()->route('eixos.index');
         

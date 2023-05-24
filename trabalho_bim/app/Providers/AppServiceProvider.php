@@ -11,11 +11,12 @@ class AppServiceProvider extends ServiceProvider {
     public function register() {
         //
     }
-    
+
 
     public function boot() {
         
         // Registra o componente com o alias "datalist"
-        Blade::component('components.datatable_eixo', 'datatableEixo');
+        Blade::component('components.datalist_eixo', 'datalistEixo');
+        Blade::component('components.datalist_curso', 'datalistCurso');
     }
 }

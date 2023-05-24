@@ -9,11 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+     public function up()
     {
-        Schema::create('eixos', function (Blueprint $table) {
+        Schema::create('cursos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('sigla');
+            $table->integer('tempo');
+            $table->unsignedBigInteger('id_eixo');
+            $table->foreign('id_eixo')->references('id')->on('eixos');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -21,9 +25,11 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     *
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('eixos');
+        Schema::dropIfExists('cursos');
     }
 };

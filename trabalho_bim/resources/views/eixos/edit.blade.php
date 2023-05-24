@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-<form action="{{ route('eixos.update', $data->id)}}" method="POST">
+<form action="{{ route('eixos.update', $dados->id)}}" method="POST">
     
     @csrf
     @method('PUT')
@@ -16,7 +16,7 @@
                     class="form-control"
                     name="nome"
                     placeholder="Nome"
-                    value="{{$data->nome}}"
+                    value="{{$dados->nome}}"
                 />
                 <label for="nome">Nome do Eixo</label>
             </div>

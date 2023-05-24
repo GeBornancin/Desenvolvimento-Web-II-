@@ -11,7 +11,9 @@ class Eixo extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    
 
-     protected $fillable = ['nome'];
+    protected $fillable = ['nome'];
 
+  
 }
