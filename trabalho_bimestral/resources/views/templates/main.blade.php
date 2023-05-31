@@ -20,12 +20,6 @@
                 <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
                         <span class="ms-3 fs-5">IFPR</span>
                 </a>
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#itens">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-menu-button-wide" viewBox="0 0 16 16">
-                        <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13z"/>
-                        <path d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </button>
                
                 </div>
             </div>
@@ -36,7 +30,7 @@
               <a href="{{ route('cursos.index') }}" class="btn btn-outline-success mx-1">Cursos</a>
               <a href="{{ route('professores.index') }}" class="btn btn-outline-success mx-1">Professores</a>
               <a href="{{ route('disciplinas.index') }}" class="btn btn-outline-success mx-1">Disciplinas</a>
-              <a href="" class="btn btn-outline-success mx-1">Docências</a>
+              <a href="{{ route('docencias.index') }}" class="btn btn-outline-success mx-1">Docências</a>
             
           </div>
           
