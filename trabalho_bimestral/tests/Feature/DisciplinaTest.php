@@ -26,7 +26,7 @@ class DisciplinaTest extends TestCase
         $disciplina = new Disciplina();
         $disciplina->nome = 'Disciplina Teste';
         $disciplina->curso_id = $curso->id;
-        $disciplina->carga = 1000; // número médio 
+        $disciplina->carga = 500; // número médio 
         $disciplina->save();
           
         

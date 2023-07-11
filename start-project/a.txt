@@ -1,0 +1,26 @@
+insert into types (nome) values ("ADMIN");
+insert into types (nome) values ("USUARIO");
+
+insert into permissions (regra,permissao,type_id) values ("generos.index",1,1);
+insert into permissions (regra,permissao,type_id) values ("generos.create",1,1);
+insert into permissions (regra,permissao,type_id) values ("generos.edit",1,1);
+insert into permissions (regra,permissao,type_id) values ("generos.show",1,1);
+insert into permissions (regra,permissao,type_id) values ("generos.destroy",1,1);
+
+insert into permissions (regra,permissao,type_id) values ("livros.index",1,1);
+insert into permissions (regra,permissao,type_id) values ("livros.create",1,1);
+insert into permissions (regra,permissao,type_id) values ("livros.edit",1,1);
+insert into permissions (regra,permissao,type_id) values ("livros.show",1,1);
+insert into permissions (regra,permissao,type_id) values ("livros.destroy",1,1);
+
+insert into permissions (regra,permissao,type_id) values ("generos.index",0,2);
+insert into permissions (regra,permissao,type_id) values ("generos.create",0,2);
+insert into permissions (regra,permissao,type_id) values ("generos.edit",0,2);
+insert into permissions (regra,permissao,type_id) values ("generos.show",0,2);
+insert into permissions (regra,permissao,type_id) values ("generos.destroy",0,2);
+
+insert into permissions (regra,permissao,type_id) values ("livros.index",1,2);
+insert into permissions (regra,permissao,type_id) values ("livros.create",0,2);
+insert into permissions (regra,permissao,type_id) values ("livros.edit",0,2);
+insert into permissions (regra,permissao,type_id) values ("livros.show",0,2);
+insert into permissions (regra,permissao,type_id) values ("livros.destroy",0,2);
